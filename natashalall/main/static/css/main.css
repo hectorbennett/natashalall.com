@@ -32,8 +32,8 @@ a svg path {
 a:hover,
 a svg:hover path {
     outline: none;
-    color: #fc6b3e;
-    fill: #fc6b3e;
+    color: #fe4e5f;
+    fill: #fe4e5f;
 }
 
 a:active {
@@ -47,7 +47,7 @@ a:active {
 
 .menu-bar {
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 60px;
 }
 
 /* .nav {

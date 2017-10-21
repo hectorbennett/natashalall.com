@@ -1,25 +1,14 @@
-{% extends 'main/base.html' %}
-{% load static %}
+{% extends 'main/base.html' %} {% load static %} {% block title %} Natasha Lall | Home {% endblock %} {% block content %}
 
-{% block title %}
-	Natasha Lall | Home
-{% endblock %}
-						
-{% block content %}
-
-    <div class="container">
-        <div class="row">
-            <div style="text-align:center;" class="col">
-                <img width="400" src="{% static 'img/main_image.png' %}"></img>
-            </div>
-        </div>
-        <div class="row">
-            <div style="text-align:center;" class="col">
-                {% autoescape off %}
-                    {{ page_content.content }}
-                {% endautoescape %}
-            </div>
-        </div>
+<div class="row">
+    <div style="text-align:center;" class="col">
+        <img width="400" src="{% static 'img/main_image.png' %}"></img>
     </div>
+</div>
+<div class="row">
+    <div style="text-align:center;" class="col">
+        {% autoescape off %} {{ page_content.content }} {% endautoescape %}
+    </div>
+</div>
 
 {% endblock %}

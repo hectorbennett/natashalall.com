@@ -46,44 +46,31 @@
         </ul>
 
         <!-- Menu bar -->
-        <ul class="menu-bar nav justify-content-around flex-column flex-sm-row">
-            <li class="nav-item">
-                <a class="nav-link active" href="#">Info</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Work</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Shows</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-            </li>
-        </ul>
+        <div class="menu-bar">
+            <ul class="nav justify-content-around flex-column flex-sm-row">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/">Info</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/work">Work</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/shows">Shows</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+            </ul>
+            <hr>
+        </div>
+
+
+
+        <!-- Main page content -->
+        {% block content %}{% endblock %}
     </div>
 
-
-    <!-- <nav class="navbar navbar-expand">
-        <ul class="nav justify-content-center">
-            <li class="nav-item">
-                <a class="nav-link" href="/">Info</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/work">Work</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/shows">Shows</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/contact">Contact</a>
-            </li>
-        </ul>
-    </nav> -->
-
-
-    {% block content %}{% endblock %}
-
-    <!-- Social Buttons -->
+    <!-- Social buttons footer -->
     <footer class="footer navbar navbar-fixed-bottom">
         <div class="container">
             <a href="#"><i class="fa fa-facebook nav-link"></i></a>
