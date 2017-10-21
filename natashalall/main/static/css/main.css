@@ -45,9 +45,14 @@ a:active {
     font-size: 3rem;
 }
 
-.nav {
-    width: 100vh;
+.menu-bar {
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
+
+/* .nav {
+    width: 100vh;
+} */
 
 .navbar-rotated-right {
     -webkit-transform: rotate(90deg);

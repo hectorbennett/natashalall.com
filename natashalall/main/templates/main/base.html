@@ -28,10 +28,43 @@
 </head>
 
 <body>
+    <div class="container">
+        <!-- Main logo -->
+        <nav class="navbar navbar-expand justify-content-center">
+            <ul class="nav nav-justified">
+                <li class="nav-item">
 
-    <!-- Left hand menu bar -->
-    <nav class="navbar navbar-expand navbar-rotated-left">
-        <ul class="nav justify-content-center slideright">
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main logo -->
+        <ul class="nav justify-content-center flex-column flex-sm-row">
+            <li class="nav-item">
+                <a href="/">{% include 'main/logo.html' %}</a>
+            </li>
+        </ul>
+
+        <!-- Menu bar -->
+        <ul class="menu-bar nav justify-content-around flex-column flex-sm-row">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Info</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Work</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Shows</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- <nav class="navbar navbar-expand">
+        <ul class="nav justify-content-center">
             <li class="nav-item">
                 <a class="nav-link" href="/">Info</a>
             </li>
@@ -45,15 +78,8 @@
                 <a class="nav-link" href="/contact">Contact</a>
             </li>
         </ul>
-    </nav>
-    <!-- Right hand logo bar -->
-    <nav class="navbar navbar-expand justify-content-center">
-        <ul class="nav nav-justified slideright">
-            <li class="nav-item">
-                <a href="/">{% include 'main/logo.html' %}</a>
-            </li>
-        </ul>
-    </nav>
+    </nav> -->
+
 
     {% block content %}{% endblock %}
 
