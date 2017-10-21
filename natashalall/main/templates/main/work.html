@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load thumbnail %}
+
+{% block title %} Natasha Lall | Home {% endblock %}
+
+{% block content %}
+
+{% for Artwork in Artworks %}
+<div class="row">
+    {{ Artwork.image }}
+    {% thumbnail Artwork.image "x780" as im %}
+        {{ im }}
+        hello
+        <a href="{% url 'artwork_detail' pk=Artwork.pk %}"><img src="{{ im.url }}" class="img-responsive" class="img-thumbnail" alt="{{ Artwork }}"></a>
+    {% endthumbnail %}
+    <h5>{{ Artwork }}</h5>
+</div>
+{% endfor %}
+
+{% endblock %}
