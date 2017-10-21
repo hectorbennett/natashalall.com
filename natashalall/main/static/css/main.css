@@ -1,0 +1,119 @@
+html,
+body {
+    background: white;
+    color: black;
+    font-family: 'Aldrich', sans-serif;
+    font-family: 'Merriweather', serif;
+    font-family: 'Bree Serif', serif;
+}
+
+
+.vertical-center {
+    min-height: 100%;
+    /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh;
+    /* These two lines are counted as one :-)       */
+    display: flex;
+    align-items: center;
+}
+
+a,
+a svg path {
+    outline: none;
+    color: #000000;
+    fill: black;
+
+    transition: 200ms;
+    transition-timing-function: ease-in-out;
+    -webkit-transition: 200ms;
+    -webkit-transition-timing-function: ease-in-out;
+}
+
+a:hover,
+a svg:hover path {
+    outline: none;
+    color: #fc6b3e;
+    fill: #fc6b3e;
+}
+
+a:active {
+    outline: none;
+}
+
+.navbar {
+    font-family: 'VT323', monospace;
+    font-size: 3rem;
+}
+
+.nav {
+    width: 100vh;
+}
+
+.navbar-rotated-right {
+    -webkit-transform: rotate(90deg);
+    -webkit-transform-origin: left top;
+    -moz-transform: rotate(90deg);
+    -moz-transform-origin: left top;
+    -ms-transform: rotate(90deg);
+    -ms-transform-origin: left top;
+    -o-transform: rotate(90deg);
+    -o-transform-origin: left top;
+    transform: rotate(90deg);
+    transform-origin: left top;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    white-space: nowrap;
+    width: 100vh;
+}
+
+.navbar-rotated-left {
+    -webkit-transform: rotate(-90deg) translateX(-100%);
+    -webkit-transform-origin: left top;
+    -moz-transform: rotate(-90deg) translateX(-100%);
+    -moz-transform-origin: left top;
+    -ms-transform: rotate(-90deg) translateX(-100%);
+    -ms-transform-origin: left top;
+    -o-transform: rotate(-90deg) translateX(-100%);
+    -o-transform-origin: left top;
+    transform: rotate(-90deg) translateX(-100%);
+    transform-origin: left top;
+    width: 100vh;
+    position: fixed;
+
+    font-size: 2rem;
+}
+
+.slideright {
+    animation-duration: 1s;
+    animation-name: slideright;
+}
+
+.slideleft {
+    animation-duration: 1s;
+    animation-name: slideright;
+}
+
+.fadein {
+    animation-duration: 1s;
+    animation-name: fadein;
+}
+
+.main-container {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.footer {
+    background: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    font-size: 2rem;
+    -moz-box-shadow: 0px 0px 60px #FFFFFF;
+    -webkit-box-shadow: 0px 0px 60px #FFFFFF;
+    box-shadow: 0px 0px 60px #FFFFFF;
+}
+
