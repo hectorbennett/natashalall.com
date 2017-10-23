@@ -3,7 +3,6 @@ from django.utils import timezone
 from .models import PageContent
 
 
-
 def index(request):
     page_content = PageContent.objects.filter(name='home_text').first()
     return render(request, 'main/index.html', {'page_content': page_content})
