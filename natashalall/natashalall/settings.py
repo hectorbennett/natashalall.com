@@ -37,9 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'main',
-    'gallery',
-    'sorl.thumbnail'
+    'photologue',
+    'sortedm2m',
 ]
 
 MIDDLEWARE = [
@@ -58,6 +59,24 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        # note: if you set APP_DIRS to True, you won't need to add 'loaders' under OPTIONS
+        # proceeding as if APP_DIRS is False
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,7 +145,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-print('MEDIA_ROOT', MEDIA_ROOT)
-
 # Sorl thumbnail requires this even though it's not needed in django anymore
 TEMPLATE_DEBUG = []
+
+SITE_ID = 1
