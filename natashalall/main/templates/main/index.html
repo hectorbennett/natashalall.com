@@ -1,12 +1,10 @@
 {% extends 'base.html' %} {% load static %} {% block title %} Natasha Lall | Home {% endblock %} {% block content %}
 
 <div class="row">
-    <div style="text-align:center;" class="col">
-        <img width="400" src="{% static 'img/main_image.png' %}"></img>
-    </div>
+    <img id="homepage-img" class="img-responsive" src="{% static 'img/main_image.png' %}"></img>
 </div>
 <div class="row">
-    <div style="text-align:center;" class="col">
+    <div class="col">
         {% autoescape off %} {{ page_content.content }} {% endautoescape %}
     </div>
 </div>

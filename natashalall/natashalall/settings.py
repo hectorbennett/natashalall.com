@@ -38,9 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'imagekit',
     'main',
-    'photologue',
-    'sortedm2m',
 ]
 
 MIDDLEWARE = [
@@ -144,8 +143,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-# Sorl thumbnail requires this even though it's not needed in django anymore
-TEMPLATE_DEBUG = []
 
 SITE_ID = 1

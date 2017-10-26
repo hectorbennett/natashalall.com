@@ -25,7 +25,6 @@ from main import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index, name='index'),
+    url(r'^work/$', views.work, name='work'),
     url(r'^contact/$', views.contact, name='contact'),
-    url(r'^photologue/', include('photologue_custom.urls')),
-    url(r'^photologue/', include('photologue.urls', namespace='photologue')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
