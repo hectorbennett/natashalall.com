@@ -18,9 +18,6 @@
     <script src="{% static 'scripts/main.js' %}"></script>
 
     <!-- fonts -->
-    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
 
     <title>{% block title %}Natasha Lall{% endblock %}</title>
@@ -28,43 +25,16 @@
 </head>
 
 <body>
-    <div class="container">
-        <!-- Main logo -->
-        <nav class="navbar navbar-expand justify-content-center">
-            <ul class="nav nav-justified">
-                <li class="nav-item">
-
-                </li>
-            </ul>
-        </nav>
-
-        <!-- Main logo -->
-        <ul class="nav justify-content-center flex-column flex-sm-row">
-            <li class="nav-item">
-                <a href="/">{% include 'main/logo.html' %}</a>
-            </li>
-        </ul>
-
-        <!-- Menu bar -->
-        <div class="menu-bar">
-            <ul class="nav justify-content-around flex-column flex-sm-row">
-                <li class="nav-item">
-                    <a class="nav-link active" href="/">Info</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/work">Work</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/shows">Shows</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contact">Contact</a>
-                </li>
-            </ul>
-            <hr>
-        </div>
-
-
+    <div id="main-container" class="container">
+        <header>
+            <a id="logo-main" class="navbar justify-content-center" href="/"><img class="img-responsive" src="{% static 'img/logo.svg' %}" width="400" alt="Natasha Lall"></a>
+            <nav class="nav justify-content-center justify-content-md-between flex-column flex-sm-row">
+                <a id="info-btn" class="nav-link active" href="/"><img class="svg" src="{% static 'img/info.svg' %}" height="25" alt="Info"></a>
+                <a id="work-btn" class="nav-link active" href="/work"><img class="svg" src="{% static 'img/work.svg' %}" height="25" alt="Work"></a>
+                <a id="shows-btn" class="nav-link active" href="/shows"><img class="svg" src="{% static 'img/shows.svg' %}" height="25" alt="Shows"></a>
+                <a id="contact-btn" class="nav-link active" href="/contact"><img class="svg" src="{% static 'img/contact.svg' %}" height="25" alt="Contact"></a>
+            </nav>
+        </header>
 
         <!-- Main page content -->
         {% block content %}{% endblock %}

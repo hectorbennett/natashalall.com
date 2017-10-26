@@ -2,19 +2,22 @@ html,
 body {
     background: white;
     color: black;
-    font-family: 'Aldrich', sans-serif;
-    font-family: 'Merriweather', serif;
     font-family: 'Bree Serif', serif;
+    line-height: 1.6rem;
+    letter-spacing: 0.05rem;
 }
 
+header {
+    text-align: center;
+}
 
-.vertical-center {
-    min-height: 100%;
-    /* Fallback for browsers do NOT support vh unit */
-    min-height: 100vh;
-    /* These two lines are counted as one :-)       */
-    display: flex;
-    align-items: center;
+header #logo-main {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#main-container {
+    padding-bottom: 100px;
 }
 
 a,
@@ -22,7 +25,6 @@ a svg path {
     outline: none;
     color: #000000;
     fill: black;
-
     transition: 200ms;
     transition-timing-function: ease-in-out;
     -webkit-transition: 200ms;
@@ -36,25 +38,43 @@ a svg:hover path {
     fill: #fe4e5f;
 }
 
+svg:hover path {
+    fill: red;
+}
+
 a:active {
     outline: none;
 }
 
-.navbar {
-    font-family: 'VT323', monospace;
-    font-size: 3rem;
+#homepage-img {
+    text-align: center;
+    padding: 20px;
 }
 
-.menu-bar {
-    padding-top: 30px;
-    padding-bottom: 60px;
+.artwork {
+    text-align: center;
+    padding: 20px;
 }
+
+.footer {
+    background: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    font-size: 2rem;
+    -moz-box-shadow: 0px 0px 60px #FFFFFF;
+    -webkit-box-shadow: 0px 0px 60px #FFFFFF;
+    box-shadow: 0px 0px 60px #FFFFFF;
+}
+
 
 /* .nav {
     width: 100vh;
 } */
 
-.navbar-rotated-right {
+/* .navbar-rotated-right {
     -webkit-transform: rotate(90deg);
     -webkit-transform-origin: left top;
     -moz-transform: rotate(90deg);
@@ -85,40 +105,6 @@ a:active {
     transform-origin: left top;
     width: 100vh;
     position: fixed;
-
     font-size: 2rem;
-}
-
-.slideright {
-    animation-duration: 1s;
-    animation-name: slideright;
-}
-
-.slideleft {
-    animation-duration: 1s;
-    animation-name: slideright;
-}
-
-.fadein {
-    animation-duration: 1s;
-    animation-name: fadein;
-}
-
-.main-container {
-    padding-left: 100px;
-    padding-right: 100px;
-}
-
-.footer {
-    background: white;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 60px;
-    line-height: 60px;
-    font-size: 2rem;
-    -moz-box-shadow: 0px 0px 60px #FFFFFF;
-    -webkit-box-shadow: 0px 0px 60px #FFFFFF;
-    box-shadow: 0px 0px 60px #FFFFFF;
-}
+} */
 
