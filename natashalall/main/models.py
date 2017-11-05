@@ -14,6 +14,10 @@ class PageContent(models.Model):
     def __str__(self):
         return self.name
 
+class SocialMediaLinks(models.Model):
+    name = models.CharField(max_length=30)
+    link = models.CharField(max_length=100)
+
 def image_filename(instance, filename):
     """
     Used by the artwork class when uploading image to specify where they are
