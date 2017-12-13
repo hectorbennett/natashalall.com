@@ -18,36 +18,36 @@
     <script src="{% static 'scripts/main.js' %}"></script>
 
     <!-- fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
     <title>{% block title %}Natasha Lall{% endblock %}</title>
 
 </head>
 
 <body>
-    <div id="main-container" class="container">
-        <header>
-            <a id="logo-main" class="navbar justify-content-center" href="/"><img class="img-responsive" src="{% static 'img/logo.svg' %}" width="400" alt="Natasha Lall"></a>
-            <nav class="nav justify-content-center justify-content-md-between flex-column flex-sm-row">
-                <a id="info-btn" class="nav-link active" href="/"><img class="svg" src="{% static 'img/info.svg' %}" height="25" alt="Info"></a>
-                <a id="work-btn" class="nav-link active" href="/work"><img class="svg" src="{% static 'img/work.svg' %}" height="25" alt="Work"></a>
-                <a id="shows-btn" class="nav-link active" href="/shows"><img class="svg" src="{% static 'img/shows.svg' %}" height="25" alt="Shows"></a>
-                <a id="contact-btn" class="nav-link active" href="/contact"><img class="svg" src="{% static 'img/contact.svg' %}" height="25" alt="Contact"></a>
-            </nav>
-        </header>
+    <header class="navbar navbar-expand flex-column bd-navbar my-5">
+        <a id="logo-main" class="navbar-brand" href="/">
+            <object class="img-fluid" type="image/svg+xml" data="{% static 'img/logo.svg' %}" width="400">Natasha Lall</object>
+        </a>
 
-        <!-- Main page content -->
-        {% block content %}{% endblock %}
-    </div>
-
-    <!-- Social buttons footer -->
-    <footer class="footer navbar navbar-fixed-bottom">
-        <div class="container">
-            <a href="#"><i class="fa fa-facebook nav-link"></i></a>
-            <a href="#"><i class="fa fa-twitter nav-link"></i></a>
-            <a href="#"><i class="fa fa-tumblr nav-link"></i></a>
-            <a href="#"><i class="fa fa-soundcloud nav-link"></i></a>
-            <a href="#"><i class="fa fa-mixcloud nav-link"></i></a>
+        <div class="justify-content-center">
+            <ul class="navbar-nav bd-navbar-nav  flex-column flex-md-row">
+                <li class="nav-item">
+                    <a id="info-btn" class="nav-link px-5 active" href="/info">
+                        <object type="image/svg+xml" data="{% static 'img/info.svg' %}" height="25">Info</object>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a id="contact-btn" class="nav-link px-5 active" href="/contact">
+                        <object type="image/svg+xml" data="{% static 'img/contact.svg' %}" height="25">Contact</object>
+                    </a>
+                </li>
+            </ul>
         </div>
-    </footer>
+    </header>
+
+    {% block content %}
+    
+    {% endblock %}
+
 </body>
