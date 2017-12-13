@@ -24,6 +24,8 @@ from main import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index, name='index'),
+    url(r'^info/$', views.info_page, name='info'),
+    url(r'^shows/$', views.shows, name='shows'),
     url(r'^work/$', views.work, name='work'),
     url(r'^contact/$', views.contact, name='contact'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

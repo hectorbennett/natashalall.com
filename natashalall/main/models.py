@@ -14,18 +14,25 @@ class PageContent(models.Model):
     def __str__(self):
         return self.name
 
+
+class Shows(models.Model):
+    start_date = models.DateField()
+    end_date = models.DateField()
+    name = models.CharField(max_length=100)
+    location = models.CharField(max_length=100)
+
+
 class SocialMediaLinks(models.Model):
     name = models.CharField(max_length=30)
     link = models.CharField(max_length=100)
+
 
 def image_filename(instance, filename):
     """
     Used by the artwork class when uploading image to specify where they are
     stored and how they are named.
     """
-    print(filename)
     ext = filename.split('.')[-1]
-    print(instance.title)
     filename = "%s.%s" % (instance.title, ext)
     return os.path.join('img/artwork', filename)
 
@@ -41,4 +48,3 @@ class Artwork(models.Model):
 
     def __str__(self):
         return self.title
-
