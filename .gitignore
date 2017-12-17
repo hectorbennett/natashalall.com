@@ -107,5 +107,6 @@ ENV/
 secret_settings.py
 natashalall/natashalall/secret_settings.py
 
-# Static files
+# Static/media
 natashalall/static
+natashalall/media
