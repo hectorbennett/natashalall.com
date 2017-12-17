@@ -15,7 +15,6 @@ import os
 =======
 import os
 from . import secret_settings
->>>>>>> 735702522448d14eb80cbb78b0b89f7ad0380c2c
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,14 +24,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-<<<<<<< HEAD
-SECRET_KEY = '_i!^ea5o*m&^$0y7#-xe0@7ft0l^i@o(6av0(q(3h3-()pcre9'
-=======
 SECRET_KEY = secret_settings.SECRET_KEY
->>>>>>> 735702522448d14eb80cbb78b0b89f7ad0380c2c
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'natashalall.com']
 
