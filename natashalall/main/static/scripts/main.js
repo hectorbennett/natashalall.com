@@ -1,9 +1,17 @@
-// A $( document ).ready() block.
 $(document).ready(function () {
-    console.log('hello');
-
-    $(".nav-link").off("mouseover").on("mouseover", function () {
-        console.log('hello');
+    $('.navbar-toggler').on('click', function() {
+        console.log('clicked');
     });
 
+    $('#navbar-content').on('shown.bs.collapse', function () {
+        console.log('show');
+        $('.navbar-toggler').removeClass('rotate-down').addClass('rotate-up');
+    });
+
+    $('#navbar-content').on('hidden.bs.collapse', function () {
+        console.log('hide');
+        $('.navbar-toggler').removeClass('rotate-up').addClass('rotate-down');
+    });
+
+    
 });
