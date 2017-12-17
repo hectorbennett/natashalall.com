@@ -1,5 +1,5 @@
 """
-Our production specific settings
+Our production environment specific settings
 """
 from .common import *
 
