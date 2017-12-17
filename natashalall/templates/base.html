@@ -15,6 +15,8 @@
 
     <!-- js -->
     <script src="{% static 'scripts/jquery.min.js' %}"></script>
+    <script src="{% static 'scripts/popper.min.js' %}"></script>
+    <script src="{% static 'scripts/bootstrap.min.js' %}"></script>
     <script src="{% static 'scripts/main.js' %}"></script>
 
     <!-- fonts -->
@@ -25,26 +27,33 @@
 </head>
 
 <body>
-    <header class="navbar navbar-expand flex-column bd-navbar my-5">
-        <a id="logo-main" class="navbar-brand" href="/">
-            <object class="img-fluid" type="image/svg+xml" data="{% static 'img/logo.svg' %}" width="400">Natasha Lall</object>
-        </a>
-
-        <div class="justify-content-center">
-            <ul class="navbar-nav bd-navbar-nav  flex-column flex-md-row">
-                <li class="nav-item">
-                    <a id="info-btn" class="nav-link px-5 active" href="/info">
-                        <object type="image/svg+xml" data="{% static 'img/info.svg' %}" height="25">Info</object>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a id="contact-btn" class="nav-link px-5 active" href="/contact">
-                        <object type="image/svg+xml" data="{% static 'img/contact.svg' %}" height="25">Contact</object>
-                    </a>
-                </li>
-            </ul>
+    <div class="header">
+        <div class="navbar justify-content-center">
+            <a href="/">
+                <object class="img-fluid" type="image/svg+xml" data="{% static 'img/logo.svg' %}" width="400">Natasha Lall</object>
+            </a>
         </div>
-    </header>
+    
+        <nav class="navbar navbar-expand-md justify-content-center">
+            <div class="collapse navbar-collapse justify-content-center" id="navbar-content">
+                <div class="navbar-nav ">
+                    <a id="info-btn" class="nav-link text-center" href="/info">
+                            <object type="image/svg+xml" data="{% static 'img/info.svg' %}" height="20">Info</object>
+                        </a>
+                    {% comment %} <a id="work-btn" class="nav-link text-center" href="/work">
+                        <object type="image/svg+xml" data="{% static 'img/work.svg' %}" height="20">Work</object>
+                    </a> {% endcomment %}
+                    <a id="contact-btn" class="nav-link text-center" href="/contact">
+                        <object type="image/svg+xml" data="{% static 'img/contact.svg' %}" height="20">Contact</object>
+                    </a>
+                </div>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+                <span><i class="fa fa-angle-double-down" aria-hidden="true"></i></span>
+            </button>
+        </nav>
+    </div>
+    
 
     {% block content %}
     
