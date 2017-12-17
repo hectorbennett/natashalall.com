@@ -112,9 +112,9 @@ ENV/
 *.sqlite3
 
 # Sensitive information
-secret_settings.py
-natashalall/natashalall/secret_settings.py
+natashalall/natashalall/settings/__init__.py
 
 # Static/media
 natashalall/static
 natashalall/media
+
