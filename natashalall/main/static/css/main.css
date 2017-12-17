@@ -33,3 +33,11 @@ object {
     -webkit-transform: rotate(360deg);
     -o-transform: rotate(360deg);
 }
+
+a:hover, a:active, a:focus {
+    outline: 0;
+}
+
+button:hover, button:active, button:focus {
+    outline: 0;
+}
