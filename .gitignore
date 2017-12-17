@@ -106,3 +106,6 @@ ENV/
 # Sensitive information
 secret_settings.py
 natashalall/natashalall/secret_settings.py
+
+# Static files
+natashalall/static

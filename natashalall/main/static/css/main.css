@@ -6,22 +6,10 @@ body {
     height: 100%
 }
 
-
-a svg { fill: #DA3232; transition: fill 0.1s; }
-a:hover path { fill: #4e86b1; }
-.secondb { fill: #4e86b1; transition: fill 0.1s; }
-.secondb:hover { fill: #000; }
-
-
-a svg g path {
-    fill: blue;
-}
-
-#path91 {
-    fill: blue;
-}
-
-
 object {
     pointer-events: none;
+}
+
+.navbar-expand-md .navbar-nav .nav-link {
+    padding: 1.5rem;
 }
