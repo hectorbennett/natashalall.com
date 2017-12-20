@@ -5,9 +5,14 @@
 
 
 {% block content %}
-<div class="homepage-img">
-    <img src="{% static 'img/main_image.png' %}">
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <img class="img-fluid" src="{% static 'img/main_image.png' %}">
+        </div>
+    </div> 
 </div>
+    
             
 
 {% endblock %}
