@@ -18,14 +18,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
-from main import views
-
-
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.index, name='index'),
-    url(r'^info/$', views.info_page, name='info'),
-    url(r'^shows/$', views.shows, name='shows'),
-    url(r'^work/$', views.work, name='work'),
-    url(r'^contact/$', views.contact, name='contact'),
+    url(r'', include('main.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'imagekit',
     'main',
+    'work',
 ]
 
 MIDDLEWARE = [
