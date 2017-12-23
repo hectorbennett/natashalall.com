@@ -31,7 +31,7 @@ class ArtworkImage(models.Model):
                                  format='JPEG',
                                  options={'quality': 90})
     image_medium = ImageSpecField(source='image_original',
-                                  processors=[ResizeToFit(300, 300)],
+                                  processors=[ResizeToFit(500, 500)],
                                   format='JPEG',
                                   options={'quality': 90})
 

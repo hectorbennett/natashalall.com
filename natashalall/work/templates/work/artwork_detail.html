@@ -4,20 +4,20 @@
 {% block title %} Natasha Lall | {{artwork}} {% endblock %}
 
 {% block heading %}
-    <h1>{{artwork}}, {{ artwork.creation_date.year }}</h1>
+    
 {% endblock %}
 
 {% block content %}
     <div class="container">
         <div class="row">
-                
+            <div class="col-12 col-md-4">
+                <h4>{{artwork}}, {{ artwork.creation_date.year }}</h4>
+            </div>
             {% for image in artwork.images.all %}
-                <div class="col-12 d-flex flex-column pb-5">
-                    <img class="img-fluid mt-auto pb-4" src="{{ image.image_large.url }}"/>
-                    
+                <div class="col-12 col-md-8">
+                    <img class="img-fluid mt-auto pb-5" src="{{ image.image_large.url }}"/>
                 </div>
             {% endfor %}
         </div>
     </div>
 {% endblock %}
-

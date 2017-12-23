@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block css %}<link rel="stylesheet" href="{% static 'css/work.css' %}">{% endblock %}
+
 {% block title %} Natasha Lall | Work {% endblock %}
 
 {% block heading %}
@@ -11,11 +13,19 @@
     <div class="container">
         <div class="row">
             {% for artwork in artworks %}
-                <div class="col-12 col-md-6 col-lg-4 d-flex flex-column pb-5">
-                    <a href="{% url 'artwork_detail' pk=artwork.pk %}"><img class="img-fluid mt-auto pb-4" src="{{ artwork.images.first.image_medium.url }}"/></a>
-                    <div class="mt-auto">{{artwork}}, {{ artwork.creation_date.year }}</div>
+                <div class="col-12 col-md-6 col-lg-4 pb-5">
+                    <div class="thumbnail" href="#">
+                        <a href="{% url 'artwork_detail' pk=artwork.pk %}">
+                            <img class="img-fluid" src="{{ artwork.images.first.image_medium.url }}" alt="" />
+                        </a>
+                        <div class="caption pt-4">
+                            {{artwork}}, {{ artwork.creation_date.year }}
+                        </div>
+                    </div>
                 </div>
             {% endfor %}
         </div>
     </div>
 {% endblock %}
+
+
