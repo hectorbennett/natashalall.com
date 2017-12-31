@@ -18,7 +18,6 @@ def image_filename(instance, filename):
 class Artwork(models.Model):
     title = models.CharField(max_length=100)
     creation_date = models.DateField()
-
     def __str__(self):
         return self.title
 
@@ -27,7 +26,7 @@ class ArtworkImage(models.Model):
     artwork = models.ForeignKey(Artwork, related_name='images')
     image_original = models.ImageField(upload_to=image_filename)
     image_large = ImageSpecField(source='image_original',
-                                 processors=[ResizeToFit(1000, 1000)],
+                                 processors=[ResizeToFit(1500, 1500)],
                                  format='JPEG',
                                  options={'quality': 90})
     image_medium = ImageSpecField(source='image_original',
@@ -35,5 +34,12 @@ class ArtworkImage(models.Model):
                                   format='JPEG',
                                   options={'quality': 90})
 
+    visible = models.BooleanField(default=False)
+
     def get_title(self):
         return self.artwork.title
+
+
+class ArtworkVideo(models.Model):
+    artwork = models.ForeignKey(Artwork, related_name='videos')
+    url = models.CharField(max_length=300)

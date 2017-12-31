@@ -2,6 +2,7 @@ from django.contrib import admin
 
 from .models import Artwork
 from .models import ArtworkImage
+from .models import ArtworkVideo
 
 
 class ArtworkImageInline(admin.TabularInline):
@@ -9,7 +10,13 @@ class ArtworkImageInline(admin.TabularInline):
     extra = 1
 
 
+class ArtworkVideoInline(admin.TabularInline):
+    model = ArtworkVideo
+    extra = 1
+
+
 class ArtworkAdmin(admin.ModelAdmin):
-    inlines = [ArtworkImageInline, ]
+    inlines = [ArtworkImageInline, ArtworkVideoInline, ]
+
 
 admin.site.register(Artwork, ArtworkAdmin)

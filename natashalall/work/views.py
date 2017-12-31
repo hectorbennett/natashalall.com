@@ -11,4 +11,7 @@ def index(request):
 
 def artwork_detail(request, pk):
     artwork = Artwork.objects.get(pk=pk)
-    return render(request, 'work/artwork_detail.html', {'artwork': artwork})
+    images = artwork.images.all().filter(visible=1)
+    videos = artwork.videos.all()
+    data_dict = {'artwork': artwork, 'images': images, 'videos': videos}
+    return render(request, 'work/artwork_detail.html', data_dict)
