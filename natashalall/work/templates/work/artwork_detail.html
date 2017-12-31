@@ -11,16 +11,16 @@
     <div class="container">
         <div class="row">
             {% for video in videos %}
-                <div class="col-12">
-                    <div class="embed-responsive embed-responsive-16by9 mt-auto pb-5">
+                <div class="col-12 pb-5">
+                    <div class="embed-responsive embed-responsive-16by9 ">
                         <iframe class="embed-responsive-item" src="{{ video.url }}" allowfullscreen></iframe>
                     </div>
                 </div>
             {% endfor %}
 
             {% for image in images %}
-                <div class="col-12">
-                    <img class="img-fluid mt-auto pb-5" src="{{ image.image_large.url }}"/>
+                <div class="col-12 pb-5">
+                    <img class="img-fluid" src="{{ image.image_large.url }}"/>
                 </div>
             {% endfor %}
         </div>
