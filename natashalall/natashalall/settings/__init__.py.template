@@ -1,0 +1,17 @@
+"""THIS FILE IS A TEMPLATE FOR OUR SECRET SETTINGS, TO TAKE EFFECT COPY TO
+__init__.py AND REMOVE THIS OPENING DOC, MAKE SURE NOT TO COMMIT"""
+
+"""DO NOT COMMIT THIS FILE
+
+This file contains any secret settings we might want to use. Instead we should
+commit a template for this file.
+"""
+
+
+# ENABLE THIS IMPORT ONLY ON DEVELOPMENT SERVER
+# from .dev import *
+
+# ENABLE THIS IMPORT ONLY ON PRODUCTION SERVER
+# from .prod import *
+
+SECRET_KEY = 'INSERT_SECRET_KEY_HERE'
