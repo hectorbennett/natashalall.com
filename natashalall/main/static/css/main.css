@@ -28,12 +28,10 @@ object {
     -moz-transform: rotate(180deg);
     -webkit-transform: rotate(180deg);
     -o-transform: rotate(180deg);
-
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
-
 }
 
 .rotate-down {
@@ -42,18 +40,20 @@ object {
     -moz-transform: rotate(360deg);
     -webkit-transform: rotate(360deg);
     -o-transform: rotate(360deg);
-
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
-
 }
 
-a:hover, a:active, a:focus {
+a:hover,
+a:active,
+a:focus {
     outline: 0;
 }
 
-button:hover, button:active, button:focus {
+button:hover,
+button:active,
+button:focus {
     outline: 0;
 }
