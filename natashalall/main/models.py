@@ -27,6 +27,11 @@ class SocialMediaLinks(models.Model):
     link = models.CharField(max_length=100)
 
 
+"""
+The stuff below has been moved, I just can't figure out how to delete properly
+"""
+
+
 def image_filename(instance, filename):
     """
     Used by the ArtworkImage class when uploading image to specify where they are
