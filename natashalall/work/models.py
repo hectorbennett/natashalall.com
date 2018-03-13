@@ -4,6 +4,15 @@ from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFit
 
 
+class Exhibition(models.Model):
+    title = models.CharField(max_length=100)
+    date = models.DateField()
+    description = models.TextField()
+
+    def __str__(self):
+        return self.title
+
+
 def image_filename(instance, filename):
     """
     Used by the ArtworkImage class when uploading image to specify where they
@@ -18,6 +27,8 @@ def image_filename(instance, filename):
 class Artwork(models.Model):
     title = models.CharField(max_length=100)
     creation_date = models.DateField()
+    exhibitions = models.ManyToManyField(Exhibition)
+
     def __str__(self):
         return self.title
 
@@ -25,14 +36,18 @@ class Artwork(models.Model):
 class ArtworkImage(models.Model):
     artwork = models.ForeignKey(Artwork, related_name='images')
     image_original = models.ImageField(upload_to=image_filename)
-    image_large = ImageSpecField(source='image_original',
-                                 processors=[ResizeToFit(1500, 1500)],
-                                 format='JPEG',
-                                 options={'quality': 90})
-    image_medium = ImageSpecField(source='image_original',
-                                  processors=[ResizeToFit(500, 500)],
-                                  format='JPEG',
-                                  options={'quality': 90})
+    image_large = ImageSpecField(
+        source='image_original',
+        processors=[ResizeToFit(1500, 1500)],
+        format='JPEG',
+        options={'quality': 90}
+    )
+    image_medium = ImageSpecField(
+        source='image_original',
+        processors=[ResizeToFit(500, 500)],
+        format='JPEG',
+        options={'quality': 90}
+    )
 
     visible = models.BooleanField(default=False)
 
