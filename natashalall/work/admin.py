@@ -3,7 +3,6 @@ from django.contrib import admin
 from .models import Artwork
 from .models import ArtworkImage
 from .models import ArtworkVideo
-from .models import Exhibition
 
 
 class ArtworkImageInline(admin.TabularInline):
@@ -22,4 +21,3 @@ class ArtworkAdmin(admin.ModelAdmin):
 
 admin.site.register(Artwork, ArtworkAdmin)
 
-admin.site.register(Exhibition)

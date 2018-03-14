@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}<link rel="stylesheet" href="{% static 'css/work.css' %}">{% endblock %}
+
+{% block title %} Natasha Lall | Exhibitions {% endblock %}
+
+{% block heading %}
+    Exhibitions
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <ul>
+            {% for exhibition in exhibitions %}
+                <li><a href="{% url 'exhibition_detail' pk=exhibition.pk %}">{{exhibition}}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
+
+
