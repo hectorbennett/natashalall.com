@@ -9,6 +9,8 @@
 
 {% block content %}
     <div class="container">
-        hello
+        {% for artwork in artworks %}
+            {{artwork}}
+        {% endfor %}
     </div>
 {% endblock %}

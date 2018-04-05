@@ -3,6 +3,8 @@ from django.db import models
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFit
 
+from exhibitions.models import Exhibition
+
 
 def image_filename(instance, filename):
     """
@@ -18,6 +20,10 @@ def image_filename(instance, filename):
 class Artwork(models.Model):
     title = models.CharField(max_length=100)
     creation_date = models.DateField()
+    exhibitions = models.ManyToManyField(
+        Exhibition,
+        verbose_name='list of exhibitions'
+    )
 
     def __str__(self):
         return self.title
