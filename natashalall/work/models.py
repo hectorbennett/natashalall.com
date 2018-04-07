@@ -20,6 +20,7 @@ def image_filename(instance, filename):
 class Artwork(models.Model):
     title = models.CharField(max_length=100)
     creation_date = models.DateField()
+    description = models.TextField(blank=True, null=True)
     exhibitions = models.ManyToManyField(
         Exhibition,
         verbose_name='list of exhibitions',
