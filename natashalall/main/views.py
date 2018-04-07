@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.utils import timezone
 from .models import PageContent
-from .models import Shows
 
 
 def index(request):
@@ -12,11 +11,6 @@ def index(request):
 def info(request):
     info_text = PageContent.objects.filter(name='info_text').first()
     return render(request, 'main/info.html', {'info_text': info_text})
-
-
-def shows(request):
-    shows = Shows.object.order_by('start_date')
-    return render(request, 'main/shows.html', {'shows': shows})
 
 
 def contact(request):

@@ -15,16 +15,21 @@ class PageContent(models.Model):
         return self.name
 
 
-class Shows(models.Model):
-    start_date = models.DateField()
-    end_date = models.DateField()
-    name = models.CharField(max_length=100)
-    location = models.CharField(max_length=100)
-
-
-class SocialMediaLinks(models.Model):
+class SocialMediaType(models.Model):
     name = models.CharField(max_length=30)
-    link = models.CharField(max_length=100)
+    css_class = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.name
+
+
+class SocialMediaLink(models.Model):
+    url = models.CharField(max_length=100)
+    type = models.ForeignKey(SocialMediaType)
+
+    def __str__(self):
+        return '{} | {}'.format(self.type, self.url)
+
 
 
 """
@@ -42,12 +47,14 @@ def image_filename(instance, filename):
     filename = "%s.%s" % (title, ext)
     return os.path.join('img/artwork', filename)
 
+
 class Artwork(models.Model):
     title = models.CharField(max_length=100)
     creation_date = models.DateField()
 
     def __str__(self):
         return self.title
+
 
 class ArtworkImage(models.Model):
     artwork = models.ForeignKey(Artwork, related_name='images')
@@ -57,9 +64,9 @@ class ArtworkImage(models.Model):
                                  format='JPEG',
                                  options={'quality': 90})
     image_medium = ImageSpecField(source='image_original',
-                                 processors=[ResizeToFit(300, 300)],
-                                 format='JPEG',
-                                 options={'quality': 90})
+                                  processors=[ResizeToFit(300, 300)],
+                                  format='JPEG',
+                                  options={'quality': 90})
 
     def get_title(self):
         return self.artwork.title
