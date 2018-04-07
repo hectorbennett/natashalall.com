@@ -6,18 +6,6 @@ from imagekit.processors import ResizeToFit
 from work.models import Artwork
 
 
-class PageContent(models.Model):
-
-    name = models.CharField(max_length=100)
-    content = models.TextField()
-
-    def publish(self):
-        self.save()
-
-    def __str__(self):
-        return self.name
-
-
 class SiteConfig(models.Model):
     information = models.TextField()
     contact_details = models.TextField()

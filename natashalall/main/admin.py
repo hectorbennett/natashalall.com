@@ -1,6 +1,5 @@
 from django.contrib import admin
 
-from .models import PageContent
 from .models import SiteConfig
 from .models import SocialMediaLink
 from .models import SocialMediaType
