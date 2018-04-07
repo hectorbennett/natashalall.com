@@ -16,8 +16,8 @@ class ArtworkVideoInline(admin.TabularInline):
 
 
 class ArtworkAdmin(admin.ModelAdmin):
-    inlines = [ArtworkImageInline, ArtworkVideoInline, ]
+    inlines = (ArtworkImageInline, ArtworkVideoInline)
+    filter_horizontal = ('exhibitions', )
 
 
 admin.site.register(Artwork, ArtworkAdmin)
-
