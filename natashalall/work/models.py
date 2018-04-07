@@ -20,17 +20,17 @@ def image_filename(instance, filename):
 class Artwork(models.Model):
     title = models.CharField(max_length=100)
     creation_date = models.DateField(
-        help_text="You can just put 01/01/xxxx if you only know the year"
+        help_text='You can just put 01/01/yyyy if you only know the year.'
     )
     description = models.TextField(blank=True, null=True)
     exhibitions = models.ManyToManyField(
         Exhibition,
         through=Exhibition.artworks.through,
         verbose_name='exhibited in',
-        help_text="""
-            Artworks can also be added to exhibitions from the exhibition edit
-            screen.
-        """,
+        help_text=(
+            'Artworks can also be added to exhibitions from the exhibition'
+            'edit screen.'
+        ),
         blank=True,
     )
 
@@ -38,7 +38,6 @@ class Artwork(models.Model):
         ordering = ['creation_date', 'title']
 
     def _get_title_and_year(self):
-        "Returns the title and year."
         return ', '.join((str(self.title), str(self.creation_date.year)))
 
     title_and_year = property(_get_title_and_year)
@@ -73,7 +72,7 @@ class ArtworkVideo(models.Model):
     artwork = models.ForeignKey(Artwork, related_name='videos')
     url = models.CharField(
         max_length=300,
-        help_text="""
-            Must be in the format https://www.youtube.com/embed/x-xxxxxxxxx
-        """
+        help_text=(
+            'Must be in the format https://www.youtube.com/embed/x-xxxxxxxxx'
+        )
     )
