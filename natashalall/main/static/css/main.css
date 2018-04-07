@@ -6,9 +6,21 @@ body {
     height: 100%;
 }
 
+a {
+    color: #fa3a43;
+}
+
+a:hover {
+    color: #AF0009;
+}
+
 .header,
 .footer {
     background-color: rgba(255, 255, 255, 0.95);
+}
+
+.footer {
+    font-size: 0.75rem;
 }
 
 object {

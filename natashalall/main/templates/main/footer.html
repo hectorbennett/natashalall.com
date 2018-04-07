@@ -2,12 +2,12 @@
     <div class="container">
         <div>
             <div class="nav navbar-text">Copyright Natasha Lall.</div>
-            <div class="nav navbar-text">Website design by Hector Bennett.</div>
-            <ul class="nav navbar-nav navbar-right">
+            <div class="nav navbar-text">Website design by <a href="http://www.hectorbennett.com">Hector Bennett</a></div>
+            <div class="nav navbar-text sm-links pull-right">
                 {% for sm in social_media_links %}
-                    <li><a target="_blank" href="{{ sm.url }}"><i class="fa fa-lg {{ sm.type.css_class }}" aria-hidden="true"></i></a></li>
+                    <span><a target="_blank" href="{{ sm.url }}"><i class="fa fa-lg {{ sm.type.css_class }}" aria-hidden="true"></i></a></span>
                 {% endfor %}
-            </ul>
+            </div>
         </div>
     </div>
 </footer>
