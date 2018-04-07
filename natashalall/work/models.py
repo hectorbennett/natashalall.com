@@ -23,12 +23,20 @@ class Artwork(models.Model):
     description = models.TextField(blank=True, null=True)
     exhibitions = models.ManyToManyField(
         Exhibition,
-        verbose_name='list of exhibitions',
+        through=Exhibition.artworks.through,
+        verbose_name='exhibited in',
+        help_text="""
+            Artworks can also be added to exhibitions from the exhibition edit
+            screen.
+        """,
         blank=True,
     )
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        ordering = ['creation_date', 'title']
 
 
 class ArtworkImage(models.Model):

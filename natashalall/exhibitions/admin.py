@@ -2,4 +2,9 @@ from django.contrib import admin
 
 from .models import Exhibition
 
-admin.site.register(Exhibition)
+
+class ExhibitionAdmin(admin.ModelAdmin):
+    filter_horizontal = ('artworks', )
+
+
+admin.site.register(Exhibition, ExhibitionAdmin)
