@@ -16,3 +16,12 @@ class Exhibition(models.Model):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        ordering = ['date', 'title']
+
+    def _get_title_and_year(self):
+        "Returns the title and year."
+        return ', '.join((str(self.title), str(self.date.year)))
+
+    title_and_year = property(_get_title_and_year)

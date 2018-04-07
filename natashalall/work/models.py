@@ -19,7 +19,9 @@ def image_filename(instance, filename):
 
 class Artwork(models.Model):
     title = models.CharField(max_length=100)
-    creation_date = models.DateField()
+    creation_date = models.DateField(
+        help_text="You can just put 01/01/xxxx if you only know the year"
+    )
     description = models.TextField(blank=True, null=True)
     exhibitions = models.ManyToManyField(
         Exhibition,
@@ -32,20 +34,17 @@ class Artwork(models.Model):
         blank=True,
     )
 
-    def __str__(self):
-        return self.title
-
     class Meta:
         ordering = ['creation_date', 'title']
 
     def _get_title_and_year(self):
         "Returns the title and year."
-        if self.title and self.creation_date:
-            return '{}, {}'.format(self.title, self.creation_date.year)
-        elif self.title:
-            return self.title
-        return ''
+        return ', '.join((str(self.title), str(self.creation_date.year)))
+
     title_and_year = property(_get_title_and_year)
+
+    def __str__(self):
+        return self.title_and_year
 
 
 class ArtworkImage(models.Model):

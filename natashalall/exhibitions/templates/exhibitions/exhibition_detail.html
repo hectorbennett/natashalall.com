@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load main_tags %}
 
 {% block title %} Natasha Lall | {{exhibition}} {% endblock %}
 
 {% block heading %}
-{{exhibition}}, {{ exhibition.date.year }}
+    {% page_heading text=exhibition.title_and_year %}
 {% endblock %}
 
 {% block content %}

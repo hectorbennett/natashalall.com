@@ -5,15 +5,13 @@ from .models import Artwork
 
 def index(request):
     artworks = Artwork.objects.all()
-    data = {
-        'artworks': artworks,
-    }
-    return render(request, 'work/index.html', data)
+    context = {'artworks': artworks}
+    return render(request, 'work/index.html', context)
 
 
 def artwork_detail(request, pk):
     artwork = Artwork.objects.get(pk=pk)
     images = artwork.images.all().filter(visible=True)
     videos = artwork.videos.all()
-    data_dict = {'artwork': artwork, 'images': images, 'videos': videos}
-    return render(request, 'work/artwork_detail.html', data_dict)
+    context = {'artwork': artwork, 'images': images, 'videos': videos}
+    return render(request, 'work/artwork_detail.html', context)

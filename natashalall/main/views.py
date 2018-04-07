@@ -8,11 +8,7 @@ site_config = SiteConfig.objects.get(id=1)
 
 def index(request):
     main_image = site_config.homepage_artwork.images.first().image_large.url
-
-    context = {
-        'main_image': main_image
-    }
-
+    context = {'main_image': main_image}
     return render(request, 'main/index.html', context)
 
 
@@ -24,9 +20,3 @@ def info(request):
 def contact(request):
     contact_info = site_config.contact_details
     return render(request, 'main/contact.html', {'contact_info': contact_info})
-
-
-def footer(request):
-
-    context = {}
-    return render(request, 'main/footer.html', context)

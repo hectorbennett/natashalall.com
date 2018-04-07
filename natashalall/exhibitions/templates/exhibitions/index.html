@@ -14,7 +14,7 @@
     <div class="container">
         <ul>
             {% for exhibition in exhibitions %}
-                <li><a href="{% url 'exhibition_detail' pk=exhibition.pk %}">{{exhibition}}</a></li>
+                <li><a href="{% url 'exhibition_detail' pk=exhibition.pk %}">{{exhibition.title_and_year}}</a></li>
             {% endfor %}
         </ul>
     </div>
