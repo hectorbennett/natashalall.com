@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load main_tags %}
+{% load artwork_tags %}
 
 {% block title %} Natasha Lall | Work {% endblock %}
 
@@ -8,14 +9,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <ul>
-            {% for exhibition in exhibitions %}
-                <li>{{exhibition}}</li>
-            {% endfor %}
-        </ul>
-    </div>
 
-    {% include "work/artwork_grid.html" with artworks=artworks %}
+    {% artwork_grid artworks %}
 
 {% endblock %}
