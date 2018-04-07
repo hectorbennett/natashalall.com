@@ -19,7 +19,7 @@ def image_filename(instance, filename):
 
 class Artwork(models.Model):
     title = models.CharField(max_length=100)
-    creation_date = models.DateField(
+    date = models.DateField(
         help_text='You can just put 01/01/yyyy if you only know the year.'
     )
     description = models.TextField(blank=True, null=True)
@@ -35,10 +35,13 @@ class Artwork(models.Model):
     )
 
     class Meta:
-        ordering = ['creation_date', 'title']
+        ordering = ['date', 'title']
 
     def _get_title_and_year(self):
-        return ', '.join((str(self.title), str(self.creation_date.year)))
+        try:
+            return ', '.join((str(self.title), str(self.date.year)))
+        except:
+            return self.title
 
     title_and_year = property(_get_title_and_year)
 

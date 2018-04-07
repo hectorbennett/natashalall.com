@@ -23,7 +23,7 @@ class ArtworkAdmin(admin.ModelAdmin):
         (None, {
             'fields': (
                 'title',
-                'creation_date',
+                'date',
                 'description',
             )
         }),
