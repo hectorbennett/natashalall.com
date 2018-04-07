@@ -10,3 +10,4 @@ To do
 - Fix production url (e.g. `natashalall.com` works but `www.natashalall.com` doesn't)
 - Add exhibitions page
 - Add option for admin to set the homepage image (instead of hardcoding).
+- Templates for works and exhibitions detail view could be merged?
