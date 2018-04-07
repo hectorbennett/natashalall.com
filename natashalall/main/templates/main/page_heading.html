@@ -1,0 +1,14 @@
+{% load static %}
+
+
+{% if image or text %}
+    <div class="pt-2 pb-5">
+        <div class="container text-center text-md-left">
+            {% if image %}
+                <object type="image/svg+xml" data="{% static image %}" height="40">{{ text }}</object>
+            {% else %}
+                <h4>{{ text }}</h4>
+            {% endif %}
+        </div>
+    </div>
+{% endif %}

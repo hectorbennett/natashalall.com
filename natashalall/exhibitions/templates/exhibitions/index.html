@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load main_tags %}
 
 {% block css %}<link rel="stylesheet" href="{% static 'css/work.css' %}">{% endblock %}
 
 {% block title %} Natasha Lall | Shows {% endblock %}
 
 {% block heading %}
-    <object type="image/svg+xml" data="{% static 'img/shows.svg' %}" height="40">Shows</object>
+    {% page_heading image='img/shows.svg' %}
 {% endblock %}
 
 {% block content %}

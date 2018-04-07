@@ -1,16 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load main_tags %}
 
 {% block title %} Natasha Lall | Contact {% endblock %}
 
 {% block heading %}
-    <div class="pt-2 pb-5">
-        <div class="container text-center text-md-left">
-            <h4>
-                <object type="image/svg+xml" data="{% static 'img/contact.svg' %}" height="40">Contact</object>
-            </h4>
-        </div>
-    </div>
+    {% page_heading image='img/contact.svg' %}
 {% endblock %}
 
 {% block content %}

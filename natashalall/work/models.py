@@ -38,6 +38,15 @@ class Artwork(models.Model):
     class Meta:
         ordering = ['creation_date', 'title']
 
+    def _get_title_and_year(self):
+        "Returns the title and year."
+        if self.title and self.creation_date:
+            return '{}, {}'.format(self.title, self.creation_date.year)
+        elif self.title:
+            return self.title
+        return ''
+    title_and_year = property(_get_title_and_year)
+
 
 class ArtworkImage(models.Model):
     artwork = models.ForeignKey(Artwork, related_name='images')

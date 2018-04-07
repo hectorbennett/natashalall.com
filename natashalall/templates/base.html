@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load main_tags %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,62 +23,23 @@
 </head>
 
 <body>
-    <div class="header pt-3 pt-md-5">
-        <div class="navbar justify-content-center">
-            <a href="/">
-                <object class="img-fluid" type="image/svg+xml" data="{% static 'img/logo.svg' %}" width="400">Natasha Lall</object>
-            </a>
-        </div>
     
-        <nav class="navbar navbar-expand-md justify-content-center">
-            <div class="collapse navbar-collapse justify-content-center" id="navbar-content">
-                <div class="navbar-nav ">
-                    <a id="info-btn" class="nav-link text-center" href="/info">
-                        <object type="image/svg+xml" data="{% static 'img/info.svg' %}" height="25">Info</object>
-                    </a>
-                    <a id="work-btn" class="nav-link text-center" href="/work">
-                        <object type="image/svg+xml" data="{% static 'img/work.svg' %}" height="25">Work</object>
-                    </a>
-                    <a id="shows-btn" class="nav-link text-center" href="/shows">
-                        <object type="image/svg+xml" data="{% static 'img/shows.svg' %}" height="25">Shows</object>
-                    </a>
-                    <a id="contact-btn" class="nav-link text-center" href="/contact">
-                        <object type="image/svg+xml" data="{% static 'img/contact.svg' %}" height="25">Contact</object>
-                    </a>
-                </div>
-            </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
-                <span><i class="fa fa-angle-double-down" aria-hidden="true"></i></span>
-            </button>
-        </nav>
+    {% nav %}
 
-        {% block heading %} {% endblock %}
-   
-    </div>
+    {% block heading %} {% endblock %}
 
     <div class="site-wrapper">
-        {% block content %}
-        {% endblock %}
+        {% block content %} {% endblock %}
     </div>
 
-    <footer class="footer">
-        <div class="container">
-            <div>
-                <p class="nav navbar-text">Copyright Natasha Lall.</p>
-                <p class="nav navbar-text">Website design by Hector Bennett.</p>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a target="_blank" href="#"><i class="fa fa-lg fa-instagram" aria-hidden="true"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
-
+    {% footer %}
 
     <!-- js -->
     <script src="{% static 'scripts/jquery.min.js' %}"></script>
     <script src="{% static 'scripts/popper.min.js' %}"></script>
     <script src="{% static 'scripts/bootstrap.min.js' %}"></script>
     <script src="{% static 'scripts/main.js' %}"></script>
-    {% block scripts %}{% endblock %}
+    {% block scripts %}
+    {% endblock %}
 
 </body>

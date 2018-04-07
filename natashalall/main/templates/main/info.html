@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
+{% load main_tags %}
 
-{% load static %}
 
 {% block title %} Natasha Lall | Info {% endblock %}
 
 {% block heading %}
-    <object type="image/svg+xml" data="{% static 'img/info.svg' %}" height="40">Info</object>
+    {% page_heading image='img/info.svg' %}
 {% endblock %}
 
 {% block content %}
