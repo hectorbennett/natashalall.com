@@ -6,8 +6,9 @@ body {
     height: 100%;
 }
 
-.header {
-    background-color: white;
+.header,
+.footer {
+    background-color: rgba(255, 255, 255, 0.95);
 }
 
 object {

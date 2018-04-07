@@ -51,17 +51,26 @@
             </button>
         </nav>
 
-        <div class="pt-2 pb-5">
-            <div class="container text-center text-md-left">
-                <h4>
-                    {% block heading %} {% endblock %}
-                </h4>
-            </div>
-        </div>
+        {% block heading %} {% endblock %}
+   
     </div>
 
-    {% block content %}
-    {% endblock %}
+    <div class="site-wrapper">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div>
+                <p class="nav navbar-text">Copyright Natasha Lall.</p>
+                <p class="nav navbar-text">Website design by Hector Bennett.</p>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a target="_blank" href="#"><i class="fa fa-lg fa-instagram" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
 
 
     <!-- js -->
