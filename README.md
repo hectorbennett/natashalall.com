@@ -12,6 +12,7 @@ To do
 - Add social media links
 - Stop svg images reloading (and disappearing) when changing page
 - Move homepage css into a separate file
+- Make base class for artwork and exhibition model
 
 Done
 ----
