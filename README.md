@@ -11,6 +11,7 @@ To do
 - Rename image filenames when saving an artwork
 - Add social media links
 - Stop svg images reloading (and disappearing) when changing page
+- Move homepage css into a separate file
 
 Done
 ----
