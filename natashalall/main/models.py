@@ -7,13 +7,23 @@ from work.models import Artwork
 
 
 class SiteConfig(models.Model):
-    information = models.TextField()
-    contact_details = models.TextField()
+    information = models.TextField(
+        help_text="""
+            The main text that appears on the info page. html is allowed.
+        """
+    )
+    contact_details = models.TextField(
+        help_text="""
+            The main text that appears on the contact page. html is allowed.
+        """
+    )
     homepage_artwork = models.OneToOneField(
         Artwork,
         verbose_name='featured homepage artwork',
         help_text="""
-            Uses the first image for an artwork.
+            The large artwork that appears on the homepage.
+            Note that this uses the first image found (i.e. the one used in the
+            thumbnail).
         """
     )
 
