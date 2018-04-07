@@ -1,18 +1,25 @@
 from django.shortcuts import render
 from django.utils import timezone
-from .models import PageContent
+from .models import SiteConfig
+from work.models import Artwork
 
+site_config = SiteConfig.objects.get(id=1)
 
 def index(request):
-    page_content = PageContent.objects.filter(name='home_text').first()
-    return render(request, 'main/index.html', {'page_content': page_content})
+    main_image = site_config.homepage_artwork.images.first().image_large.url
+
+    context = {
+        'main_image': main_image
+    }
+
+    return render(request, 'main/index.html', context)
 
 
 def info(request):
-    info_text = PageContent.objects.filter(name='info_text').first()
+    info_text = site_config.information
     return render(request, 'main/info.html', {'info_text': info_text})
 
 
 def contact(request):
-    contact_info = PageContent.objects.filter(name='contact_info').first()
+    contact_info = site_config.contact_details
     return render(request, 'main/contact.html', {'contact_info': contact_info})

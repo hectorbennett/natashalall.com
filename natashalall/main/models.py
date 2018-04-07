@@ -3,8 +3,11 @@ from django.db import models
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFit
 
+from work.models import Artwork
+
 
 class PageContent(models.Model):
+
     name = models.CharField(max_length=100)
     content = models.TextField()
 
@@ -13,6 +16,35 @@ class PageContent(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class SiteConfig(models.Model):
+    information = models.TextField()
+    contact_details = models.TextField()
+    homepage_artwork = models.OneToOneField(
+        Artwork,
+        verbose_name='featured homepage artwork',
+        help_text="""
+            Uses the first image for an artwork.
+        """
+    )
+
+    def __str__(self):
+        return 'Site config'
+
+    def save(self, *args, **kwargs):
+        if self.id == 1 or SiteConfig.objects.count() == 0:
+            # We can only have one config
+            self.id = 1
+            super(SiteConfig, self).save(*args, **kwargs)
+        else:
+            return
+
+    def delete(self, *args, **kwargs):
+        if self.id == 1:
+            return
+        else:
+            super(SiteConfig, self).delete(*args, **kwargs)
 
 
 class SocialMediaType(models.Model):
@@ -29,7 +61,6 @@ class SocialMediaLink(models.Model):
 
     def __str__(self):
         return '{} | {}'.format(self.type, self.url)
-
 
 
 """
