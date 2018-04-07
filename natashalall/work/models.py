@@ -22,7 +22,8 @@ class Artwork(models.Model):
     creation_date = models.DateField()
     exhibitions = models.ManyToManyField(
         Exhibition,
-        verbose_name='list of exhibitions'
+        verbose_name='list of exhibitions',
+        blank=True,
     )
 
     def __str__(self):
@@ -45,7 +46,7 @@ class ArtworkImage(models.Model):
         options={'quality': 90}
     )
 
-    visible = models.BooleanField(default=False)
+    visible = models.BooleanField(default=True)
 
     def get_title(self):
         return self.artwork.title
@@ -53,4 +54,4 @@ class ArtworkImage(models.Model):
 
 class ArtworkVideo(models.Model):
     artwork = models.ForeignKey(Artwork, related_name='videos')
-    url = models.CharField(max_length=300)
+    url = models.CharField(max_length=300, help_text='Must be in the format https://www.youtube.com/embed/x-xxxxxxxxx')
