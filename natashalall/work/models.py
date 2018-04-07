@@ -55,4 +55,9 @@ class ArtworkImage(models.Model):
 
 class ArtworkVideo(models.Model):
     artwork = models.ForeignKey(Artwork, related_name='videos')
-    url = models.CharField(max_length=300, help_text='Must be in the format https://www.youtube.com/embed/x-xxxxxxxxx')
+    url = models.CharField(
+        max_length=300,
+        help_text="""
+            Must be in the format https://www.youtube.com/embed/x-xxxxxxxxx
+        """
+    )
