@@ -13,3 +13,4 @@ To do
 - Templates for works and exhibitions detail view could be merged?
 - Rename image filenames when saving an artwork
 - Make it so you can add artworks to exhibitions (as well as exhibitions to artworks) in the admin
+- Add social media links
