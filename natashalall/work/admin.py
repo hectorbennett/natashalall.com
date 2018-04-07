@@ -19,5 +19,20 @@ class ArtworkAdmin(admin.ModelAdmin):
     inlines = (ArtworkImageInline, ArtworkVideoInline)
     filter_horizontal = ('exhibitions', )
 
+    fieldsets = (
+        (None, {
+            'fields': (
+                'title',
+                'creation_date',
+                'description',
+            )
+        }),
+        ('Exhibitions', {
+            'fields': (
+                'exhibitions',
+            )
+        }),
+    )
+
 
 admin.site.register(Artwork, ArtworkAdmin)
