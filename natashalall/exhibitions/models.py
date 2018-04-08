@@ -18,7 +18,7 @@ class Exhibition(models.Model):
         return self.title
 
     class Meta:
-        ordering = ['date', 'title']
+        ordering = ['-date', 'title']
 
     def _get_title_and_year(self):
         "Returns the title and year."

@@ -35,7 +35,7 @@ class Artwork(models.Model):
     )
 
     class Meta:
-        ordering = ['date', 'title']
+        ordering = ['-date', 'title']
 
     def _get_title_and_year(self):
         try:
