@@ -12,6 +12,7 @@ To do
 - Move homepage css into a separate file
 - Make base class for artwork and exhibition model
 - Let admin customise copyright line
+- Add update multiple mechanism
 
 Done
 ----
