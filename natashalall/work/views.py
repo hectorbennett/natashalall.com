@@ -4,7 +4,7 @@ from .models import Artwork
 
 
 def index(request):
-    artworks = Artwork.objects.all()
+    artworks = Artwork.objects.filter(live=True)
     context = {'artworks': artworks}
     return render(request, 'work/index.html', context)
 
