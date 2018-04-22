@@ -25,11 +25,16 @@
                 </div>
             {% endfor %}
 
+            {% for audio_clip in audio_clips %}
+                {% autoescape off %} {{ audio_clip.url }} {% endautoescape %}
+            {% endfor %}
+
             {% for image in images %}
                 <div class="col-12 pb-5">
                     <img class="img-fluid" src="{{ image.image_large.url }}"/>
                 </div>
             {% endfor %}
+
         </div>
 
     </div>
