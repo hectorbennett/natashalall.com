@@ -26,10 +26,12 @@
     
     {% nav %}
 
-    {% block heading %} {% endblock %}
-
     <div class="site-wrapper">
-        {% block content %} {% endblock %}
+        <div class="container pt-3">
+            {% block heading %} {% endblock %}
+
+            {% block content %} {% endblock %}
+        </div>
     </div>
 
     {% footer %}

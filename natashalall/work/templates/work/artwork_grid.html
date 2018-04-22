@@ -1,16 +1,14 @@
-<div class="container">
-    <div class="row">
-        {% for artwork in artworks %}
-            <div class="col-12 col-md-6 col-lg-4 pb-5">
-                <div class="thumbnail" href="#">
-                    <a href="{% url 'artwork_detail' pk=artwork.pk %}">
-                        <img class="img-fluid" src="{{ artwork.images.first.image_medium.url }}" alt="" />
-                    </a>
-                    <div class="caption pt-4">
-                        {{artwork.title_and_year}}
-                    </div>
+<div class="row">
+    {% for artwork in artworks %}
+        <div class="col-12 col-md-6 col-lg-4 pb-5">
+            <div class="thumbnail" href="#">
+                <a href="{% url 'artwork_detail' pk=artwork.pk %}">
+                    <img class="img-fluid" src="{{ artwork.images.first.image_medium.url }}" alt="" />
+                </a>
+                <div class="caption pt-1 text-center">
+                    {{artwork.title_and_year}}
                 </div>
             </div>
-        {% endfor %}
-    </div>
+        </div>
+    {% endfor %}
 </div>

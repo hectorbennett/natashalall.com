@@ -2,10 +2,10 @@
 
 
 {% if image or text %}
-    <div class="pt-2 pb-5">
+    <div class="page-heading pt-4 pb-3 mb-4">
         <div class="container text-center text-md-left">
             {% if image %}
-                <object type="image/svg+xml" data="{% static image %}" height="40">{{ text }}</object>
+                <img src="{% static image %}" height="30"/>
             {% else %}
                 <h4>{{ text }}</h4>
             {% endif %}

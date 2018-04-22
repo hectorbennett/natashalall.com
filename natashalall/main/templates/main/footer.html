@@ -1,11 +1,13 @@
 <footer class="footer">
-    <div class="container">
-        <div>
-            <div class="nav navbar-text">Copyright Natasha Lall.</div>
-            <div class="nav navbar-text">Website design by <a href="http://www.hectorbennett.com">Hector Bennett</a>.</div>
-            <div class="nav navbar-text sm-links pull-right">
+    <div class="container justify-content-between">
+        <div class="d-flex justify-content-between">
+            <div>
+                <div class="nav navbar-text">Copyright Natasha Lall.</div>
+                <div class="nav navbar-text">Website design by <a href="http://www.hectorbennett.com">Hector Bennett</a>.</div>
+            </div>
+            <div class="nav navbar-text sm-links d-flex justify-content-center">
                 {% for sm in social_media_links %}
-                    <span><a target="_blank" href="{{ sm.url }}"><i class="fa fa-lg {{ sm.type.css_class }}" aria-hidden="true"></i></a></span>
+                    <span class="pl-3"><a target="_blank" href="{{ sm.url }}"><i class="fa fa-lg {{ sm.type.css_class }}" aria-hidden="true"></i></a></span>
                 {% endfor %}
             </div>
         </div>
