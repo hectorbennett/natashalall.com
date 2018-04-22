@@ -3,6 +3,7 @@ from django.contrib import admin
 from .models import Artwork
 from .models import ArtworkImage
 from .models import ArtworkVideo
+from .models import ArtworkAudio
 
 
 class ArtworkImageInline(admin.TabularInline):
@@ -15,8 +16,13 @@ class ArtworkVideoInline(admin.TabularInline):
     extra = 1
 
 
+class ArtworkAudioInline(admin.TabularInline):
+    model = ArtworkAudio
+    extra = 1
+
+
 class ArtworkAdmin(admin.ModelAdmin):
-    inlines = (ArtworkImageInline, ArtworkVideoInline)
+    inlines = (ArtworkImageInline, ArtworkVideoInline, ArtworkAudioInline)
     filter_horizontal = ('exhibitions', )
 
     fieldsets = (
@@ -25,6 +31,7 @@ class ArtworkAdmin(admin.ModelAdmin):
                 'title',
                 'date',
                 'description',
+                'live',
             )
         }),
         ('Exhibitions', {

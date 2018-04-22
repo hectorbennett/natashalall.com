@@ -33,6 +33,15 @@ class Artwork(models.Model):
         ),
         blank=True,
     )
+    live = models.BooleanField(
+        'is live',
+        default=True,
+        help_text=(
+            'If this is unchecked then the artwork will not appear on '
+            'artwork pages. Useful if you want to set a custom homepage '
+            'artwork.'
+        ),
+    )
 
     class Meta:
         ordering = ['-date', 'title']
@@ -77,5 +86,17 @@ class ArtworkVideo(models.Model):
         max_length=300,
         help_text=(
             'Must be in the format https://www.youtube.com/embed/x-xxxxxxxxx'
+        )
+    )
+
+
+class ArtworkAudio(models.Model):
+    artwork = models.ForeignKey(Artwork, related_name='audio')
+    url = models.CharField(
+        max_length=500,
+        help_text=(
+            'Must be in iframe format. You can find the '
+            'code for this in the embed section of the share dialog in '
+            'soundcloud.'
         )
     )

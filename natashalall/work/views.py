@@ -13,5 +13,11 @@ def artwork_detail(request, pk):
     artwork = Artwork.objects.get(pk=pk)
     images = artwork.images.all().filter(visible=True)
     videos = artwork.videos.all()
-    context = {'artwork': artwork, 'images': images, 'videos': videos}
+    audio_clips = artwork.audio.all()
+    context = {
+        'artwork': artwork,
+        'images': images,
+        'videos': videos,
+        'audio_clips': audio_clips
+    }
     return render(request, 'work/artwork_detail.html', context)
