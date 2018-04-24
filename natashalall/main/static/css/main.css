@@ -136,3 +136,7 @@ body {
 .nav-link:not(.active) {
     opacity: 0.8;
 }
+
+h4 {
+    font-weight: bold;
+}

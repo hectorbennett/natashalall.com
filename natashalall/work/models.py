@@ -91,7 +91,7 @@ class ArtworkVideo(models.Model):
 
 
 class ArtworkAudio(models.Model):
-    artwork = models.ForeignKey(Artwork, related_name='audio')
+    artwork = models.ForeignKey(Artwork, related_name='audio_clips')
     url = models.CharField(
         max_length=500,
         help_text=(

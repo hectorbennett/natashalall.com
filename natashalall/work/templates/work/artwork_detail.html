@@ -37,5 +37,19 @@
 
         </div>
 
+        {% if exhibitions %}
+        <div class="row">
+            <div class="col">
+            <h5>Exhibited in</h5>
+                
+                <ul>
+                    {% for exhibition in exhibitions %}
+                    <li><a href="{% url 'exhibition_detail' pk=exhibition.pk %}">{{exhibition.title_and_year}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+
     </div>
 {% endblock %}
