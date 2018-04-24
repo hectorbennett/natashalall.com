@@ -2,7 +2,7 @@ natashalall.com
 ===============
 An artist website in development for Natasha Lall
 
-![Homepage screenshot](https://raw.githubusercontent.com/hectorbennett/natashalall.com/master/screenshot.pn)
+![Homepage screenshot](https://raw.githubusercontent.com/hectorbennett/natashalall.com/master/screenshot.png)
 
 To do
 -----
