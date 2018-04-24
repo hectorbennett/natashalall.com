@@ -6,7 +6,7 @@ An artist website in development for Natasha Lall
 To do
 -----
 - Migrate to PostgreSQL
-- Fix production url (e.g. `natashalall.com` works but `www.natashalall.com` doesn't)
+- Get images from youtube api
 - Rename image filenames when saving an artwork
 - Move homepage css into a separate file
 - Make base class for artwork and exhibition model
@@ -21,3 +21,4 @@ Done
 - Make it so you can add artworks to exhibitions (as well as exhibitions to artworks) in the admin
 - Add option for admin to set the homepage image (instead of hardcoding).
 - Stop svg images reloading (and disappearing) when changing page
+- Fix production url (e.g. `natashalall.com` works but `www.natashalall.com` doesn't)
