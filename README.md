@@ -1,4 +1,4 @@
-[natashalall.com](http://www.natashalall.com)
+[www.natashalall.com](http://www.natashalall.com)
 =============================================
 An artist website in development for Natasha Lall
 
