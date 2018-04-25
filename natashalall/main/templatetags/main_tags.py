@@ -2,6 +2,7 @@ import re
 
 from django import template
 from main.models import SocialMediaLink
+from main.models import SiteConfig
 
 register = template.Library()
 
@@ -9,7 +10,12 @@ register = template.Library()
 @register.inclusion_tag('main/footer.html')
 def footer():
     social_media_links = SocialMediaLink.objects.all()
-    return {'social_media_links': social_media_links}
+    copyright_line = SiteConfig.load().copyright_line
+    context = {
+        'social_media_links': social_media_links,
+        'copyright_line': copyright_line
+    }
+    return context
 
 
 @register.inclusion_tag('main/nav.html', takes_context=True)
