@@ -8,4 +8,4 @@ urlpatterns = [
     url(r'^contact/$', views.contact, name='contact'),
     url(r'^work/', include('work.urls'), name='work'),
     url(r'^shows/', include('exhibitions.urls')),
-] 
+]

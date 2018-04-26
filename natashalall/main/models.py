@@ -8,7 +8,7 @@ from work.models import Artwork
 
 class SingletonModel(models.Model):
     """An abstract class used for models where only one object.
-    
+
     E.g. sitewide settings
     """
     class Meta:
