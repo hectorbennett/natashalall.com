@@ -13,6 +13,7 @@ To do
 - Make base class for artwork and exhibition model
 - Add update multiple mechanism
 - Move SingletonModel to a better location maybe?
+- Create exhibitions page
 
 Done
 ----
