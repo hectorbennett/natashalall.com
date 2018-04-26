@@ -7,13 +7,12 @@ An artist website in development for Natasha Lall
 To do
 -----
 - Migrate to PostgreSQL
-- Get images from youtube api
 - Rename image filenames when saving an artwork
 - Move homepage css into a separate file
 - Make base class for artwork and exhibition model
 - Add update multiple mechanism
 - Move SingletonModel to a better location maybe?
-- Create exhibitions page
+- Soundcloud
 
 Done
 ----
@@ -25,3 +24,5 @@ Done
 - Stop svg images reloading (and disappearing) when changing page
 - Fix production url (e.g. `natashalall.com` works but `www.natashalall.com` doesn't)
 - Let admin customise copyright line
+- Create exhibitions page
+- Get youtube thumbnail reference
