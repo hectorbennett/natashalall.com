@@ -7,7 +7,10 @@ from work.models import Artwork
 
 
 class SingletonModel(models.Model):
-
+    """An abstract class used for models where only one object.
+    
+    E.g. sitewide settings
+    """
     class Meta:
         abstract = True
 
@@ -82,8 +85,8 @@ The stuff below has been moved, I just can't figure out how to delete properly
 
 def image_filename(instance, filename):
     """
-    Used by the ArtworkImage class when uploading image to specify where they are
-    stored and how they are named.
+    Used by the ArtworkImage class when uploading image to specify where they
+    are stored and how they are named.
     """
     ext = filename.split('.')[-1]
     title = instance.get_title()
