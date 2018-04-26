@@ -26,30 +26,3 @@ def nav(context):
 @register.inclusion_tag('main/page_heading.html')
 def page_heading(text=None, image=None):
     return {'text': text, 'image': image}
-
-
-@register.simple_tag
-def active(request, pattern):
-
-    
-
-    if not pattern:
-        return ''
-
-    print('path: ' + request.path)
-    print('pattern: ' + pattern)
-    print('-'*80)
-
-    if pattern.startswith(request.path):
-        return 'active'
-
-    return ''
-
-    # print(re.search(pattern, request.path))
-
-    # if not request.path:
-    #     return ''
-
-    # if re.search(pattern, request.path):
-    #     return 'active'
-    # return ''
