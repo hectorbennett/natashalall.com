@@ -4,11 +4,10 @@
 {% block title %} Natasha Lall | {{artwork}} {% endblock %}
 
 {% block heading %}
-    {% page_heading text=artwork.title_and_year %}
+    {% page_heading text=artwork.title_year %}
 {% endblock %}
 
 {% block content %}
-    <div class="container">
         
         <div class="row">
             {% if artwork.description %}
@@ -20,7 +19,7 @@
             {% for video in videos %}
                 <div class="col-12 pb-5">
                     <div class="embed-responsive embed-responsive-16by9 ">
-                        <iframe class="embed-responsive-item" src="{{ video.url }}" allowfullscreen></iframe>
+                        <iframe class="embed-responsive-item" src="{{ video.embed_url }}" allowfullscreen></iframe>
                     </div>
                 </div>
             {% endfor %}
@@ -44,12 +43,11 @@
                 
                 <ul>
                     {% for exhibition in exhibitions %}
-                    <li><a href="{% url 'exhibition_detail' pk=exhibition.pk %}">{{exhibition.title_and_year}}</a></li>
+                    <li><a href="{% url 'exhibition_detail' pk=exhibition.pk %}">{{exhibition}}</a></li>
                     {% endfor %}
                 </ul>
             </div>
         </div>
         {% endif %}
 
-    </div>
 {% endblock %}
