@@ -20,9 +20,10 @@ def image_filename(instance, filename):
 class Artwork(models.Model):
     title = models.CharField(max_length=100)
     date = models.DateField(
-        help_text='You can just put 01/01/yyyy if you only know the year.'
+        help_text='You can just put 01/01/yyyy if you only know the year.',
+        null=True
     )
-    description = models.TextField(blank=True, null=True)
+    description = models.TextField(blank=True)
     exhibitions = models.ManyToManyField(
         Exhibition,
         through=Exhibition.artworks.through,
@@ -37,9 +38,8 @@ class Artwork(models.Model):
         'is live',
         default=True,
         help_text=(
-            'If this is unchecked then the artwork will not appear on '
-            'artwork pages. Useful if you want to set a custom homepage '
-            'artwork.'
+            'If this is unchecked then the artwork will not appear anywhere '
+            'on the site.'
         ),
     )
 
