@@ -12,7 +12,8 @@ To do
 - Make base class for artwork and exhibition model
 - Add update multiple mechanism
 - Move SingletonModel to a better location maybe?
-- Soundcloud
+- Add soundcloud bits
+- Option for main background custom image upload or artwork already uploaded
 
 Done
 ----
