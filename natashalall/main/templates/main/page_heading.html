@@ -2,13 +2,11 @@
 
 
 {% if image or text %}
-    <div class="page-heading pt-4 pb-3 mb-4">
-        <div class="container text-center text-md-left">
-            {% if image %}
-                <img src="{% static image %}" height="30"/>
-            {% else %}
-                <h4>{{ text }}</h4>
-            {% endif %}
-        </div>
+    <div class="text-center text-md-left">
+        {% if image %}
+            <img src="{% static image %}" height="30"/>
+        {% else %}
+            <h4>{{ text }}</h4>
+        {% endif %}
     </div>
 {% endif %}
