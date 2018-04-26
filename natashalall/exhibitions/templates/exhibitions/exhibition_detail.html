@@ -5,24 +5,40 @@
 {% block title %} Natasha Lall | {{exhibition}} {% endblock %}
 
 {% block heading %}
-    {% page_heading text=exhibition.title_and_year %}
+    {% page_heading text=exhibition.title_location %}
+
+    {% if exhibition.url %}
+        <div class="pb-2">
+            <a href="{{ exhibition.url }}">{{ exhibition.url }}</a>
+        </div>
+    {% endif %}
+
+    {% if exhibition.date %}
+        <div class="pb-2">
+            {{ exhibition.date }}
+            {% if exhibition.end_date %}
+                - {{ exhibition.end_date }}
+            {% endif %}
+        </div>
+    {% endif %}
+
+    
 {% endblock %}
 
 {% block content %}
-    <div class="container">
         <div class="row">
 
             {% if exhibition.description %}
-                <div class="col-12 pb-5">
+                <div class="col-12 pb-2">
                     {{ exhibition.description }}
                 </div>
             {% endif %}
 
+            
+
         </div>
-    </div>
 
     
-    <div class="container">
         
         {% for artwork in artworks %}
             <div class="row">
@@ -57,7 +73,6 @@
             <h4>{{ artwork.description }}</h4>
         </div> {% endcomment %}
         
-        </div>
         {% endfor %}
     
 </div>
