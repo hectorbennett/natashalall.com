@@ -1,11 +1,14 @@
-[www.natashalall.com](http://www.natashalall.com)
-=============================================
+
+# natashalall.com #
+
+[link](http://www.natashalall.com)
+
 An artist website in development for Natasha Lall
 
 ![Homepage screenshot](https://raw.githubusercontent.com/hectorbennett/natashalall.com/master/screenshot.png)
 
-To do
------
+## To do ##
+
 - Migrate to PostgreSQL
 - Rename image filenames when saving an artwork
 - Move homepage css into a separate file
@@ -14,9 +17,10 @@ To do
 - Move SingletonModel to a better location maybe?
 - Add soundcloud bits
 - Option for main background custom image upload or artwork already uploaded
+- Upgrade to Django 2.0
 
-Done
-----
+## Done ##
+
 - Add social media links
 - Add exhibitions page
 - Templates for works and exhibitions detail view could be merged?
