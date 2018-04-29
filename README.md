@@ -17,7 +17,6 @@ An artist website in development for Natasha Lall
 - Move SingletonModel to a better location maybe?
 - Add soundcloud bits
 - Option for main background custom image upload or artwork already uploaded
-- Upgrade to Django 2.0
 
 ## Done ##
 
@@ -31,3 +30,5 @@ An artist website in development for Natasha Lall
 - Let admin customise copyright line
 - Create exhibitions page
 - Get youtube thumbnail reference
+- Upgrade to Django 2.0
+- Add exhibition shots
