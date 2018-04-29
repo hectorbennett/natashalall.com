@@ -1,4 +1,7 @@
 from django.contrib import admin
+from django.db import models
+
+from main.forms import AdminImageWidget
 
 from .models import Artwork
 from .models import ArtworkImage
@@ -7,6 +10,8 @@ from .models import ArtworkAudio
 
 
 class ArtworkImageInline(admin.TabularInline):
+    formfield_overrides = {models.ImageField: {'widget': AdminImageWidget}}
+
     model = ArtworkImage
     extra = 1
 

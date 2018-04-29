@@ -1,4 +1,18 @@
+import os
 from django.db import models
+from imagekit.models import ImageSpecField
+from imagekit.processors import ResizeToFit
+
+
+def image_filename(instance, filename):
+    """
+    Used by the ArtworkImage class when uploading image to specify where they
+    are stored and how they are named.
+    """
+    ext = filename.split('.')[-1]
+    title = instance.get_title()
+    filename = "{}.{}".format(title, ext)
+    return os.path.join('exhibition', filename)
 
 
 class Exhibition(models.Model):
@@ -59,3 +73,35 @@ class Exhibition(models.Model):
             str(self.location)
         )
         return ', '.join(x for x in fields if x)
+
+
+class ExhibitionImage(models.Model):
+    exhibition = models.ForeignKey(
+        Exhibition,
+        related_name='images',
+        on_delete=models.CASCADE
+    )
+    image_original = models.ImageField('exhibition', upload_to=image_filename)
+    image_large = ImageSpecField(
+        source='image_original',
+        processors=[ResizeToFit(1500, 1500)],
+        format='JPEG',
+        options={'quality': 90}
+    )
+    image_medium = ImageSpecField(
+        source='image_original',
+        processors=[ResizeToFit(500, 500)],
+        format='JPEG',
+        options={'quality': 90}
+    )
+    image_small = ImageSpecField(
+        source='image_original',
+        processors=[ResizeToFit(150, 150)],
+        format='JPEG',
+        options={'quality': 90},
+    )
+
+    visible = models.BooleanField(default=True)
+
+    def get_title(self):
+        return self.exhibition.title

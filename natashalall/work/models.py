@@ -2,6 +2,7 @@ import os
 
 from urllib.parse import urlparse, parse_qs
 from django.db import models
+from django.utils.safestring import mark_safe
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFit
 
@@ -95,6 +96,12 @@ class ArtworkImage(models.Model):
         processors=[ResizeToFit(500, 500)],
         format='JPEG',
         options={'quality': 90}
+    )
+    image_small = ImageSpecField(
+        source='image_original',
+        processors=[ResizeToFit(150, 150)],
+        format='JPEG',
+        options={'quality': 90},
     )
 
     visible = models.BooleanField(default=True)

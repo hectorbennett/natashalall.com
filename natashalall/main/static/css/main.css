@@ -121,11 +121,10 @@ body {
     padding: 60px;
 }
 
-/* .page-heading {
-    border-bottom-color: #fa3a43;
-    border-bottom-width: 6px;
-    border-bottom-style: dotted;
-} */
+.page-heading {
+    border-bottom: 2px solid;
+}
+
 
 .navbar-nav {
     align-items: center;
