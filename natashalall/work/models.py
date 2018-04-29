@@ -78,7 +78,11 @@ class Artwork(models.Model):
 
 
 class ArtworkImage(models.Model):
-    artwork = models.ForeignKey(Artwork, related_name='images')
+    artwork = models.ForeignKey(
+        Artwork,
+        related_name='images',
+        on_delete=models.CASCADE
+    )
     image_original = models.ImageField('image', upload_to=image_filename)
     image_large = ImageSpecField(
         source='image_original',
@@ -100,7 +104,11 @@ class ArtworkImage(models.Model):
 
 
 class ArtworkVideo(models.Model):
-    artwork = models.ForeignKey(Artwork, related_name='videos')
+    artwork = models.ForeignKey(
+        Artwork,
+        related_name='videos',
+        on_delete=models.CASCADE
+    )
     url = models.CharField(
         'youtube url',
         max_length=300,
@@ -134,7 +142,11 @@ class ArtworkVideo(models.Model):
 
 
 class ArtworkAudio(models.Model):
-    artwork = models.ForeignKey(Artwork, related_name='audio_clips')
+    artwork = models.ForeignKey(
+        Artwork,
+        related_name='audio_clips',
+        on_delete=models.CASCADE
+    )
     url = models.CharField(
         'soundcloud url',
         max_length=500,

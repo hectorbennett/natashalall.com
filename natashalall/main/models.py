@@ -51,6 +51,7 @@ class SiteConfig(SingletonModel):
         Artwork,
         verbose_name='featured homepage artwork',
         null=True,
+        on_delete=models.CASCADE,
         help_text=(
             'The large artwork that appears on the homepage.'
             'Note that this uses the first image found (i.e. the one used in'
@@ -72,7 +73,10 @@ class SocialMediaType(models.Model):
 
 class SocialMediaLink(models.Model):
     url = models.CharField(max_length=100)
-    type = models.ForeignKey(SocialMediaType)
+    type = models.ForeignKey(
+        SocialMediaType,
+        on_delete=models.CASCADE
+    )
 
     def __str__(self):
         return '{} | {}'.format(self.type, self.url)
@@ -103,7 +107,11 @@ class Artwork(models.Model):
 
 
 class ArtworkImage(models.Model):
-    artwork = models.ForeignKey(Artwork, related_name='images')
+    artwork = models.ForeignKey(
+        Artwork,
+        related_name='images',
+        on_delete=models.CASCADE
+    )
     image_original = models.ImageField(upload_to=image_filename)
     image_large = ImageSpecField(source='image_original',
                                  processors=[ResizeToFit(1000, 1000)],
