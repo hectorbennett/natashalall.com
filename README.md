@@ -17,6 +17,8 @@ An artist website in development for Natasha Lall
 - Move SingletonModel to a better location maybe?
 - Add soundcloud bits
 - Option for main background custom image upload or artwork already uploaded
+- Add hitcounter to admin?
+- Set up error alerts
 
 ## Done ##
 
