@@ -31,7 +31,7 @@ class Artwork(models.Model):
         through=Exhibition.artworks.through,
         verbose_name='exhibited in',
         help_text=(
-            'Artworks can also be added to exhibitions from the exhibition'
+            'Artworks can also be added to exhibitions from the exhibition '
             'edit screen.'
         ),
         blank=True,
@@ -128,7 +128,7 @@ class ArtworkVideo(models.Model):
     @property
     def thumbnail_url(self):
         if self.url_id:
-            return 'https://img.youtube.com/vi/{}/hqdefault.jpg'.format(
+            return 'https://img.youtube.com/vi/{}/mqdefault.jpg'.format(
                 self.url_id)
         return ''
 
